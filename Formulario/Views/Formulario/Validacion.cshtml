@@ -1,0 +1,13 @@
+﻿@model Formulario.Models.FormularioModel
+
+@{
+    ViewBag.Title = "Validacion";
+}
+
+<h2>Validacion</h2>
+
+<p><strong>Nombre:</strong> @Model.Nombre</p>
+<p><strong>Correo Electrónico:</strong> @Model.CorreoElectronico</p>
+<p><strong>Mensaje:</strong> @Model.Mensaje</p>
+
+@Html.ActionLink("Volver al Formulario", "Index", null, new { @class = "btn btn-primary" })

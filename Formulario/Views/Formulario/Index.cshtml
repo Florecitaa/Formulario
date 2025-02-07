@@ -1,0 +1,36 @@
+﻿@model Formulario.Models.FormularioModel
+
+@{
+    ViewBag.Title = "Formulario de Datos";
+}
+
+<h2>Formulario de Contacto</h2>
+
+@using (Html.BeginForm("Index", "Formulario", FormMethod.Post))
+{
+
+    <h4>Nombre</h4>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nombre)
+        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+    </div>
+    <h4>Correo electronico</h4>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CorreoElectronico)
+        @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CorreoElectronico, "", new { @class = "text-danger" })
+    </div>
+    <h4>Mensaje</h4>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mensaje)
+        @Html.TextAreaFor(m => m.Mensaje, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Mensaje, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
